@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Access extends Model
 {
-    //
+    protected $fillable = [
+        'name',
+        'description',
+        'url'
+    ];
 }

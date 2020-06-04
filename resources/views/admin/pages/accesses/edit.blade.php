@@ -10,7 +10,7 @@
 
     <div class="row">
         <div class="col-lg-11">
-            <h1>Editar Acesso {{ $access->name }}</h1>
+            <h1>Editar Acesso <b>{{ $access->name }}</b></h1>
         </div>
         <div class="col-lg-1">
             <a href="{{ route('admin.accesses.index') }}" class="btn btn-primary">Voltar</a>
