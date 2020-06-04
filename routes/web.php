@@ -13,6 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], function () {
+
+    // PERMISSION ROUTES //
+    Route::resource('permissions', 'PermissionController');
+
+    // PROFILE ROUTES //
+    Route::resource('profiles', 'ProfileController');
+
+    // ACCESS ROUTES //
+    Route::resource('accesses', 'AccessController');
+
+    // HOME ROUTES //
+    Route::get('/', 'HomeController@home')->name('home');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });

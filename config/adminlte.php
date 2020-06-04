@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'MeusTickets',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,12 +45,12 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Meus</b>Tickets',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'AdminLTE',
+    'logo_img_alt' => 'Tickets',
 
     /*
     |--------------------------------------------------------------------------
@@ -69,7 +69,6 @@ return [
     'usermenu_header_class' => 'bg-primary',
     'usermenu_image' => false,
     'usermenu_desc' => false,
-    'usermenu_profile_url' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -91,42 +90,22 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Authentication Views Classes
-    |--------------------------------------------------------------------------
-    |
-    | Here you can change the look and behavior of the authentication views.
-    |
-    | For more detailed instructions you can look here:
-    | https://github.com/jeroennoten/Laravel-AdminLTE/#661-authentication-views-classes
-    |
-    */
-
-    'classes_auth_card' => 'card-outline card-primary',
-    'classes_auth_header' => '',
-    'classes_auth_body' => '',
-    'classes_auth_footer' => '',
-    'classes_auth_icon' => '',
-    'classes_auth_btn' => 'btn-flat btn-primary',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Admin Panel Classes
+    | Extra Classes
     |--------------------------------------------------------------------------
     |
     | Here you can change the look and behavior of the admin panel.
     |
     | For more detailed instructions you can look here:
-    | https://github.com/jeroennoten/Laravel-AdminLTE/#662-admin-panel-classes
+    | https://github.com/jeroennoten/Laravel-AdminLTE/#66-classes
     |
     */
 
     'classes_body' => '',
     'classes_brand' => '',
     'classes_brand_text' => '',
-    'classes_content_wrapper' => '',
-    'classes_content_header' => '',
-    'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_content_header' => 'container-fluid',
+    'classes_content' => 'container-fluid',
+    'classes_sidebar' => 'sidebar-light-primary elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand-md',
@@ -188,7 +167,7 @@ return [
 
     'use_route_url' => false,
 
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'admin/',
 
     'logout_url' => 'logout',
 
@@ -215,8 +194,6 @@ return [
     */
 
     'enabled_laravel_mix' => false,
-    'laravel_mix_css_path' => 'css/app.css',
-    'laravel_mix_js_path' => 'js/app.js',
 
     /*
     |--------------------------------------------------------------------------
@@ -232,86 +209,146 @@ return [
 
     'menu' => [
         [
-            'text' => 'search',
-            'search' => true,
-            'topnav' => true,
-        ],
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
+            'text' => 'Eventos',
+            'icon' => 'fas fa-star',
+//            'can' => 'Eventos',
             'submenu' => [
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    'text' => 'Listar',
+                    'url' => 'admin/events',
+                    'icon' => 'far fa-address-card',
                 ],
                 [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
+                    'text' => 'Criar',
+                    'url' => 'admin/events/create',
+                    'icon' => 'fas fa-plus',
+                ],
+            ]
+        ],
+
+        [
+            'text' => 'Acessos',
+            'icon' => 'fas fa-door-open',
+//            'can' => 'Planos',
+            'submenu' => [
+                [
+                    'text' => 'Listar',
+                    'url' => 'admin/accesses',
+                    'icon' => 'far fa-address-card',
                 ],
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    'text' => 'Criar',
+                    'url' => 'admin/accesses/create',
+                    'icon' => 'fas fa-plus',
                 ],
-            ],
+            ]
         ],
-        ['header' => 'labels'],
+
         [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
+            'text' => 'Perfis',
+            'icon' => 'far fa-address-book',
+//            'can' => 'Perfis',
+            'submenu' => [
+                [
+                    'text' => 'Listar',
+                    'url' => 'admin/profiles',
+                    'icon' => 'far fa-address-card',
+                ],
+                [
+                    'text' => 'Criar',
+                    'url' => 'admin/profiles/create',
+                    'icon' => 'fas fa-plus',
+                ],
+            ]
         ],
+
         [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
+            'text' => 'Permissões',
+            'icon' => 'fas fa-lock',
+//            'can' => 'Permissões',
+            'submenu' => [
+                [
+                    'text' => 'Listar',
+                    'url' => 'admin/permissions',
+                    'icon' => 'fas fa-user-lock',
+                ],
+                [
+                    'text' => 'Criar',
+                    'url' => 'admin/permissions/create',
+                    'icon' => 'fas fa-plus',
+                ],
+            ]
         ],
+
         [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
+            'text' => 'Categorias',
+            'icon' => 'fas fa-layer-group',
+//            'can' => 'Categorias',
+            'submenu' => [
+                [
+                    'text' => 'Listar',
+                    'url' => 'admin/categories',
+                    'icon' => 'fas fa-user-lock',
+                ],
+                [
+                    'text' => 'Criar',
+                    'url' => 'admin/categories/create',
+                    'icon' => 'fas fa-plus',
+                ],
+            ]
+        ],
+
+        [
+            'text' => 'Artigos',
+            'icon' => 'fas fa-file',
+//            'can' => 'Artigos',
+            'submenu' => [
+                [
+                    'text' => 'Listar',
+                    'url' => 'admin/articles',
+                    'icon' => 'fas fa-user-lock',
+                ],
+                [
+                    'text' => 'Criar',
+                    'url' => 'admin/articles/create',
+                    'icon' => 'fas fa-plus',
+                ],
+            ]
+        ],
+
+        [
+            'text' => 'Usuários',
+            'icon' => 'fas fa-users',
+//            'can' => 'Usuários',
+            'submenu' => [
+                [
+                    'text' => 'Listar',
+                    'url' => 'admin/users',
+                    'icon' => 'fas fa-user-lock',
+                ],
+                [
+                    'text' => 'Criar',
+                    'url' => 'admin/permissions/create',
+                    'icon' => 'fas fa-plus',
+                ],
+            ]
+        ],
+
+        [
+            'text' => 'account_settings',
+            'icon' => 'fas fa fa-cog',
+            'submenu' => [
+                [
+                    'text' => 'profile',
+                    'url' => 'admin/settings',
+                    'icon' => 'fas fa-fw fa-user',
+                ],
+                [
+                    'text' => 'change_password',
+                    'url' => 'admin/settings',
+                    'icon' => 'fas fa-fw fa-lock',
+                ],
+            ]
         ],
     ],
 
@@ -353,21 +390,21 @@ return [
     'plugins' => [
         [
             'name' => 'Datatables',
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js',
                 ],
                 [
                     'type' => 'js',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js',
                 ],
                 [
                     'type' => 'css',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css',
                 ],
             ],
