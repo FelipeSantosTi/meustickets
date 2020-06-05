@@ -43,11 +43,13 @@
                         <td>
                             {{ $permission->description }}
                         </td>
-                        <td style="width: 100px">
+                        <td style="width: 130px">
                             <a href="{{ route('admin.permissions.show', $permission->id) }}" class="btn btn-primary">
                                 <i class="far fa-eye"></i></a>
                             <a href="{{ route('admin.permissions.edit', $permission->id) }}" class="btn btn-warning">
                                 <i class="fas fa-edit"></i></a>
+                            <a href="{{ route('admin.permissions.profiles', $permission->id) }}" class="btn btn-dark">
+                                <i class="far fa-address-card"></i></a>
                         </td>
                     </tr>
                 @endforeach

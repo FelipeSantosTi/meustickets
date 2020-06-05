@@ -1,19 +1,17 @@
 @extends('adminlte::page')
 
-@section('title', 'Perfis')
+@section('title', 'Perfis da Permissão')
 
 @section('content_header')
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Home</a></li>
-        <li class="breadcrumb-item active"><a href="{{ route('admin.profiles.index') }}" class="active">Perfis</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('admin.permissions.index') }}"
+            class="active">Perfis</a></li>
     </ol>
 
     <div class="row">
         <div class="col-lg-11">
-            <h1>Perfis</h1>
-        </div>
-        <div class="col-lg-1">
-            <a href="{{ route('admin.profiles.create') }}" class="btn btn-primary">Novo</a>
+        <h1>Perfis da Permissão <b>{{ $permission->name }}</b></h1>
         </div>
     </div>
 @stop
@@ -30,7 +28,7 @@
                 <tr>
                     <th>Nome</th>
                     <th>Descrição</th>
-                    <th style="width: 50px">Ações</th>
+                    {{-- <th style="width: 50px">Ações</th> --}}
                 </tr>
                 </thead>
 
@@ -43,14 +41,10 @@
                         <td>
                             {{ $profile->description }}
                         </td>
-                        <td style="width: 130px">
-                            <a href="{{ route('admin.profiles.show', $profile->id) }}" class="btn btn-primary">
-                                <i class="far fa-eye"></i></a>
-                            <a href="{{ route('admin.profiles.edit', $profile->id) }}" class="btn btn-warning">
-                                <i class="fas fa-edit"></i></a>
-                            <a href="{{ route('admin.profiles.permissions', $profile->id) }}" class="btn btn-dark">
-                                <i class="fas fa-lock"></i></a>
-                        </td>
+                        {{-- <td style="width: 50px">
+                            <a href="{{ route('admin.profiles.permissions.detach', [$permission->id, $profile->id]) }}"
+                                class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                        </td> --}}
                     </tr>
                 @endforeach
                 </tbody>
