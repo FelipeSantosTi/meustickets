@@ -10,7 +10,7 @@
 
     <div class="row">
         <div class="col-lg-11">
-            <h1>Detalhes da Permissão <b>{{ $permission->nome }}</b></h1>
+            <h1>Detalhes da Permissão <b>{{ $permission->name }}</b></h1>
         </div>
         <div class="col-lg-1">
             <a href="{{ route('admin.permissions.index') }}" class="btn btn-primary">Voltar</a>
@@ -27,11 +27,11 @@
         <div class="card-body">
             <ul>
                 <li>
-                    <strong>Nome: </strong> {{ $permission->nome }}
+                    <strong>Nome: </strong> {{ $permission->name }}
                 </li>
 
                 <li>
-                    <strong>Descrição: </strong> {{ $permission->descricao }}
+                    <strong>Descrição: </strong> {{ $permission->description }}
                 </li>
             </ul>
 

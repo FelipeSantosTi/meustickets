@@ -38,10 +38,10 @@
                 @foreach($permissions as $permission)
                     <tr>
                         <td>
-                            {{ $permission->nome }}
+                            {{ $permission->name }}
                         </td>
                         <td>
-                            {{ $permission->descricao }}
+                            {{ $permission->description }}
                         </td>
                         <td style="width: 100px">
                             <a href="{{ route('admin.permissions.show', $permission->id) }}" class="btn btn-primary">

@@ -10,7 +10,7 @@
 
     <div class="row">
         <div class="col-lg-11">
-            <h1>Editar Permissão <b>{{ $permission->nome }}</b></h1>
+            <h1>Editar Permissão <b>{{ $permission->name }}</b></h1>
         </div>
         <div class="col-lg-1">
             <a href="{{ route('admin.permissions.index') }}" class="btn btn-primary">Voltar</a>
