@@ -211,7 +211,7 @@ return [
         [
             'text' => 'Eventos',
             'icon' => 'fas fa-star',
-//            'can' => 'Eventos',
+            'can' => 'Eventos',
             'submenu' => [
                 [
                     'text' => 'Listar',
@@ -283,7 +283,7 @@ return [
         [
             'text' => 'Categorias',
             'icon' => 'fas fa-layer-group',
-//            'can' => 'Categorias',
+            'can' => 'Categorias',
             'submenu' => [
                 [
                     'text' => 'Listar',
@@ -301,7 +301,7 @@ return [
         [
             'text' => 'Artigos',
             'icon' => 'fas fa-file',
-//            'can' => 'Artigos',
+            'can' => 'Artigos',
             'submenu' => [
                 [
                     'text' => 'Listar',
@@ -319,7 +319,7 @@ return [
         [
             'text' => 'Usuários',
             'icon' => 'fas fa-users',
-//            'can' => 'Usuários',
+            'can' => 'Usuários',
             'submenu' => [
                 [
                     'text' => 'Listar',

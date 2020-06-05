@@ -24,7 +24,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], fu
     // ACCESS ROUTES //
     Route::resource('accesses', 'AccessController');
 
-    // HOME ROUTES //
+    // HOME ROUTE //
     Route::get('/', 'HomeController@home')->name('home');
 });
 

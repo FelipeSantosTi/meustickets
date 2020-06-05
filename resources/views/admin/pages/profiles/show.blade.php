@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Detalhes do Profile')
+@section('title', 'Detalhes do Perfil')
 
 @section('content_header')
     <ol class="breadcrumb">
@@ -10,7 +10,7 @@
 
     <div class="row">
         <div class="col-lg-11">
-            <h1>Detalhes do Perfil <b>{{ $perfil->nome }}</b></h1>
+            <h1>Detalhes do Perfil <b>{{ $profile->name }}</b></h1>
         </div>
         <div class="col-lg-1">
             <a href="{{ route('admin.profiles.index') }}" class="btn btn-primary">Voltar</a>
@@ -27,16 +27,16 @@
         <div class="card-body">
             <ul>
                 <li>
-                    <strong>Nome: </strong> {{ $perfil->nome }}
+                    <strong>Nome: </strong> {{ $profile->name }}
                 </li>
 
                 <li>
-                    <strong>Descrição: </strong> {{ $perfil->descricao }}
+                    <strong>Descrição: </strong> {{ $profile->description }}
                 </li>
             </ul>
 
             <div class="form-group col-md-6">
-                <form action="{{ route('admin.profiles.destroy', $perfil->id) }}" method="POST">
+                <form action="{{ route('admin.profiles.destroy', $profile->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>

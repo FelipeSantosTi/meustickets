@@ -35,18 +35,18 @@
                 </thead>
 
                 <tbody>
-                @foreach($perfis as $perfil)
+                @foreach($profiles as $profile)
                     <tr>
                         <td>
-                            {{ $perfil->nome }}
+                            {{ $profile->name }}
                         </td>
                         <td>
-                            {{ $perfil->descricao }}
+                            {{ $profile->description }}
                         </td>
                         <td style="width: 100px">
-                            <a href="{{ route('admin.profiles.show', $perfil->id) }}" class="btn btn-primary">
+                            <a href="{{ route('admin.profiles.show', $profile->id) }}" class="btn btn-primary">
                                 <i class="far fa-eye"></i></a>
-                            <a href="{{ route('admin.profiles.edit', $perfil->id) }}" class="btn btn-warning">
+                            <a href="{{ route('admin.profiles.edit', $profile->id) }}" class="btn btn-warning">
                                 <i class="fas fa-edit"></i></a>
                         </td>
                     </tr>

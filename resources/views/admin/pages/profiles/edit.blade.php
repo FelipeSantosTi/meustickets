@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Editar Profile')
+@section('title', 'Editar Perfil')
 
 @section('content_header')
     <ol class="breadcrumb">
@@ -10,7 +10,7 @@
 
     <div class="row">
         <div class="col-lg-11">
-            <h1>Editar Perfil <b>{{ $perfil->nome }}</b></h1>
+            <h1>Editar Perfil <b>{{ $profile->name }}</b></h1>
         </div>
         <div class="col-lg-1">
             <a href="{{ route('admin.profiles.index') }}" class="btn btn-primary">Voltar</a>
@@ -25,7 +25,7 @@
         </div>
 
         <div class="card-body">
-            <form action="{{ route('admin.profiles.update', $perfil->id) }}" class="form" method="POST">
+            <form action="{{ route('admin.profiles.update', $profile->id) }}" class="form" method="POST">
                 @csrf
                 @method('PUT')
                 @include('admin.pages.profiles._partials.form')
