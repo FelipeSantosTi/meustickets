@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], function () {
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'middleware' => 'auth'], function () {
 
     // ACCESS x PROFILE ROUTES //
     Route::get('accesses/{id}/profiles/{idProfile}/detach', 'AccessProfileController@detach')
@@ -55,3 +55,5 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], fu
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
