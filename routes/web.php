@@ -49,11 +49,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
     Route::resource('accesses', 'AccessController');
 
     // HOME ROUTE //
-    Route::get('/', 'HomeController@home')->name('home');
+    Route::get('/', 'DashboardController@home')->name('home');
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Site\HomeController@home')->name('site.home');
 
 Auth::routes();
