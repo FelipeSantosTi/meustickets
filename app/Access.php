@@ -17,6 +17,11 @@ class Access extends Model
         return $this->belongsToMany(Profile::class);
     }
 
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
+
     public function profilesAvailable()
     {
         $profiles = Profile::whereNotIn('profiles.id', function ($query) {

@@ -1,6 +1,9 @@
 <?php
 
-use App\User;
+use App\{
+    User,
+    Event,
+};
 use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
@@ -12,7 +15,9 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
+        $event = Event::first();
+
+        $event->users()->create([
             'name' => 'Felipe Santos',
             'email' => 'felipe@meustickets.com.br',
             'password' => bcrypt('Felipe13')
