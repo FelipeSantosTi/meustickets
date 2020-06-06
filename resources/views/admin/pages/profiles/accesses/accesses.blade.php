@@ -1,19 +1,18 @@
 @extends('adminlte::page')
 
-@section('title', 'Acessos')
+@section('title', 'Acessos do Perfil')
 
 @section('content_header')
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Home</a></li>
-        <li class="breadcrumb-item active"><a href="{{ route('admin.accesses.index') }}" class="active">Acessos</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('admin.profiles.index') }}">Perfis</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('admin.profiles.accesses', $profile->id) }}"
+            class="active">Acessos</a></li>
     </ol>
 
     <div class="row">
         <div class="col-lg-11">
-            <h1>Acessos</h1>
-        </div>
-        <div class="col-lg-1">
-            <a href="{{ route('admin.accesses.create') }}" class="btn btn-primary">Novo</a>
+        <h1>Acessos do Perfil <b>{{ $profile->name }}</b></h1>
         </div>
     </div>
 @stop
@@ -21,7 +20,7 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Lista de Acessos</h3>
+            <h3 class="card-title">Lista de Perfis</h3>
         </div>
 
         <div class="card-body">
@@ -30,7 +29,7 @@
                 <tr>
                     <th>Nome</th>
                     <th>Descrição</th>
-                    <th style="width: 50px">Ações</th>
+                    {{-- <th style="width: 50px">Ações</th> --}}
                 </tr>
                 </thead>
 
@@ -43,14 +42,10 @@
                         <td>
                             {{ $access->description }}
                         </td>
-                        <td style="width: 130px">
-                            <a href="{{ route('admin.accesses.show', $access->url) }}" class="btn btn-primary">
-                                <i class="far fa-eye"></i></a>
-                            <a href="{{ route('admin.accesses.edit', $access->url) }}" class="btn btn-warning">
-                                <i class="fas fa-edit"></i></a>
-                            <a href="{{ route('admin.accesses.profiles', $access->id) }}" class="btn btn-dark">
-                                <i class="far fa-address-book"></i></a>
-                        </td>
+                        {{-- <td style="width: 50px">
+                            <a href="{{ route('admin.accesses.accesses.detach', [$access->id, $access->id]) }}"
+                                class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                        </td> --}}
                     </tr>
                 @endforeach
                 </tbody>

@@ -1,19 +1,22 @@
 @extends('adminlte::page')
 
-@section('title', 'Acessos')
+@section('title', 'Perfis do Acesso')
 
 @section('content_header')
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Home</a></li>
-        <li class="breadcrumb-item active"><a href="{{ route('admin.accesses.index') }}" class="active">Acessos</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('admin.accesses.index') }}">Acessos</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('admin.accesses.profiles', $access->id) }}"
+            class="active">Perfis</a></li>
     </ol>
 
     <div class="row">
         <div class="col-lg-11">
-            <h1>Acessos</h1>
+        <h1>Perfis do Acesso <b>{{ $access->name }}</b></h1>
         </div>
         <div class="col-lg-1">
-            <a href="{{ route('admin.accesses.create') }}" class="btn btn-primary">Novo</a>
+            <a href="{{ route('admin.accesses.profiles.availables', $access->id) }}"
+                class="btn btn-primary">Novo</a>
         </div>
     </div>
 @stop
@@ -21,7 +24,7 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Lista de Acessos</h3>
+            <h3 class="card-title">Lista de Permissões</h3>
         </div>
 
         <div class="card-body">
@@ -35,21 +38,17 @@
                 </thead>
 
                 <tbody>
-                @foreach($accesses as $access)
+                @foreach($profiles as $profile)
                     <tr>
                         <td>
-                            {{ $access->name }}
+                            {{ $profile->name }}
                         </td>
                         <td>
-                            {{ $access->description }}
+                            {{ $profile->description }}
                         </td>
-                        <td style="width: 130px">
-                            <a href="{{ route('admin.accesses.show', $access->url) }}" class="btn btn-primary">
-                                <i class="far fa-eye"></i></a>
-                            <a href="{{ route('admin.accesses.edit', $access->url) }}" class="btn btn-warning">
-                                <i class="fas fa-edit"></i></a>
-                            <a href="{{ route('admin.accesses.profiles', $access->id) }}" class="btn btn-dark">
-                                <i class="far fa-address-book"></i></a>
+                        <td style="width: 50px">
+                            <a href="{{ route('admin.accesses.profiles.detach', [$access->id, $profile->id]) }}"
+                                class="btn btn-danger"><i class="fas fa-trash"></i></a>
                         </td>
                     </tr>
                 @endforeach

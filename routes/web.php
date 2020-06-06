@@ -15,6 +15,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], function () {
 
+    // ACCESS x PROFILE ROUTES //
+    Route::get('accesses/{id}/profiles/{idProfile}/detach', 'AccessProfileController@detach')
+            ->name('accesses.profiles.detach');
+    Route::post('accesses/{id}/profiles/attach', 'AccessProfileController@attach')
+            ->name('accesses.profiles.attach');
+    Route::get('accesses/{id}/profiles/availables', 'AccessProfileController@availables')
+            ->name('accesses.profiles.availables');
+    Route::get('accesses/{id}/profiles', 'AccessProfileController@profiles')
+            ->name('accesses.profiles');
+    Route::get('profiles/{id}/accesses', 'AccessProfileController@accesses')
+            ->name('profiles.accesses');
+
     // PERMISSION x PROFILE ROUTES //
     Route::get('profiles/{id}/permissions/{idPermission}/detach', 'PermissionProfileController@detach')
             ->name('profiles.permissions.detach');
