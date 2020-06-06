@@ -18,9 +18,9 @@ class UsersTableSeeder extends Seeder
         $event = Event::first();
 
         $event->users()->create([
-            'name' => 'Felipe Santos',
-            'email' => 'felipe@meustickets.com.br',
-            'password' => bcrypt('Felipe13')
+            'name' => 'Administrador',
+            'email' => 'admin@meustickets.com.br',
+            'password' => bcrypt('adminadmin')
         ]);
     }
 }

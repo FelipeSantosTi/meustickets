@@ -53,5 +53,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
 });
 
 Route::get('/', 'Site\HomeController@home')->name('site.home');
+Route::get('/access', 'Site\HomeController@access')->name('access.register');
 
 Auth::routes();
