@@ -319,7 +319,7 @@ return [
         [
             'text' => 'Usuários',
             'icon' => 'fas fa-users',
-            'can' => 'Usuários',
+            /* 'can' => 'Usuários', */
             'submenu' => [
                 [
                     'text' => 'Listar',
