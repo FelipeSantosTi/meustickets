@@ -299,7 +299,7 @@ return [
         ],
 
         [
-            'text' => 'Artigos',
+            'text' => 'Avaliar',
             'icon' => 'fas fa-file',
             'can' => 'Artigos',
             'submenu' => [
@@ -308,9 +308,22 @@ return [
                     'url' => 'admin/articles',
                     'icon' => 'fas fa-user-lock',
                 ],
+            ]
+        ],
+
+        [
+            'text' => 'Inscrição',
+            'icon' => 'fas fa-users',
+            'can' => 'Inscrição',
+            'submenu' => [
                 [
-                    'text' => 'Criar',
-                    'url' => 'admin/articles/create',
+                    'text' => 'Listar',
+                    'url' => 'admin/subscription',
+                    'icon' => 'fas fa-user-lock',
+                ],
+                [
+                    'text' => 'Consultar',
+                    'url' => 'admin/subscription/consult',
                     'icon' => 'fas fa-plus',
                 ],
             ]
@@ -328,7 +341,7 @@ return [
                 ],
                 [
                     'text' => 'Criar',
-                    'url' => 'admin/permissions/create',
+                    'url' => 'admin/users/create',
                     'icon' => 'fas fa-plus',
                 ],
             ]

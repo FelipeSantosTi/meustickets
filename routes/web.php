@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'middleware' => 'auth'], function () {
 
-    // ACCESS x PROFILE ROUTES //
+    // USERS ROUTES //
+    Route::resource('users', 'UserController');
+
+    // ACCESSES x PROFILES ROUTES //
     Route::get('accesses/{id}/profiles/{idProfile}/detach', 'AccessProfileController@detach')
             ->name('accesses.profiles.detach');
     Route::post('accesses/{id}/profiles/attach', 'AccessProfileController@attach')
@@ -27,7 +30,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
     Route::get('profiles/{id}/accesses', 'AccessProfileController@accesses')
             ->name('profiles.accesses');
 
-    // PERMISSION x PROFILE ROUTES //
+    // PERMISSIONS x PROFILES ROUTES //
     Route::get('profiles/{id}/permissions/{idPermission}/detach', 'PermissionProfileController@detach')
             ->name('profiles.permissions.detach');
     Route::post('profiles/{id}/permissions/attach', 'PermissionProfileController@attach')
@@ -39,13 +42,13 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
     Route::get('permissions/{id}/profiles', 'PermissionProfileController@profiles')
             ->name('permissions.profiles');
 
-    // PERMISSION ROUTES //
+    // PERMISSIONS ROUTES //
     Route::resource('permissions', 'PermissionController');
 
-    // PROFILE ROUTES //
+    // PROFILES ROUTES //
     Route::resource('profiles', 'ProfileController');
 
-    // ACCESS ROUTES //
+    // ACCESSES ROUTES //
     Route::resource('accesses', 'AccessController');
 
     // HOME ROUTE //
