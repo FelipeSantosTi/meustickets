@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -40,5 +41,10 @@ class User extends Authenticatable
     public function event()
     {
         return $this->belongsTo(Event::class);
+    }
+
+    public function scopeEventUser(Builder $query)
+    {
+        return $query->where('event_id', auth()->user()->event_id);
     }
 }

@@ -43,7 +43,7 @@
                         <td>
                             {{ $user->email }}
                         </td>
-                        <td style="width: 130px">
+                        <td style="width: 100px">
                             <a href="{{ route('admin.users.show', $user->id) }}" class="btn btn-primary">
                                 <i class="far fa-eye"></i></a>
                             <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-warning">

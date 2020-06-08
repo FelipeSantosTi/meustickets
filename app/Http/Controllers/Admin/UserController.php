@@ -18,7 +18,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = $this->repository->all();
+        $users = $this->repository->latest()->eventUser()->paginate();
         return view('admin.pages.users.index', [
             'users' => $users
         ]);
@@ -42,7 +42,7 @@ class UserController extends Controller
 
     public function show($id)
     {
-        if (!$user = $this->repository->find($id)) {
+        if (!$user = $this->repository->eventUser()->find($id)) {
             return redirect()->back();
         }
 
@@ -53,7 +53,7 @@ class UserController extends Controller
 
     public function edit($id)
     {
-        if (!$user = $this->repository->find($id)) {
+        if (!$user = $this->repository->eventUser()->find($id)) {
             return redirect()->back();
         }
 
@@ -64,7 +64,7 @@ class UserController extends Controller
 
     public function update(StoreUpdateUser $request, $id)
     {
-        if (!$user = $this->repository->find($id)) {
+        if (!$user = $this->repository->eventUser()->find($id)) {
             return redirect()->back();
         }
 
@@ -81,7 +81,7 @@ class UserController extends Controller
 
     public function destroy($id)
     {
-        if (!$user = $this->repository->find($id)) {
+        if (!$user = $this->repository->eventUser()->find($id)) {
             return redirect()->back();
         }
 

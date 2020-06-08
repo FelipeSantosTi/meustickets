@@ -43,7 +43,7 @@
                         <td>
                             {{ $permission->description }}
                         </td>
-                        <td style="width: 130px">
+                        <td style="width: 150px">
                             <a href="{{ route('admin.permissions.show', $permission->id) }}" class="btn btn-primary">
                                 <i class="far fa-eye"></i></a>
                             <a href="{{ route('admin.permissions.edit', $permission->id) }}" class="btn btn-warning">

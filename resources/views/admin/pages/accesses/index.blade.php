@@ -43,7 +43,7 @@
                         <td>
                             {{ $access->description }}
                         </td>
-                        <td style="width: 130px">
+                        <td style="width: 150px">
                             <a href="{{ route('admin.accesses.show', $access->url) }}" class="btn btn-primary">
                                 <i class="far fa-eye"></i></a>
                             <a href="{{ route('admin.accesses.edit', $access->url) }}" class="btn btn-warning">
