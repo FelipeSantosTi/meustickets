@@ -24,6 +24,17 @@ class SubscriptionController extends Controller
         ]);
     }
 
+    public function consult()
+    {
+        $id = auth()->user()->id;
+        $subscriptions = $this->repository->all();
+        $subscription = $subscriptions->where('user_id', $id)->first();;
+
+        return view('admin.pages.subscriptions.consult', [
+            'subscription' => $subscription
+        ]);
+    }
+
     public function create()
     {
         return view('admin.pages.subscriptions.create');
@@ -31,7 +42,10 @@ class SubscriptionController extends Controller
 
     public function store(StoreUpdateSubscription $request)
     {
-        $this->repository->create($request->all());
+        $data = $request->all();
+        $data['user_id'] = auth()->user()->id;
+
+        $this->repository->create($data);
 
         return redirect()->route('admin.subscriptions.index');
     }
@@ -64,7 +78,10 @@ class SubscriptionController extends Controller
             return redirect()->back();
         }
 
-        $subscription->update($request->all());
+        $data = $request->all();
+        $data['evaluator'] = auth()->user()->name;
+
+        $subscription->update($data);
 
         return redirect()->route('admin.subscriptions.index');
     }

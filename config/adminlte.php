@@ -318,7 +318,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Realizar',
-                    'url' => 'admin/subscriptions',
+                    'url' => 'admin/subscriptions/create',
                     'icon' => 'far fa-edit',
                 ],
                 [

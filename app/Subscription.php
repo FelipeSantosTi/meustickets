@@ -10,6 +10,7 @@ class Subscription extends Model
         'title',
         'resume',
         'document',
+        'user_id',
         'evaluator',
         'status',
         'n1',

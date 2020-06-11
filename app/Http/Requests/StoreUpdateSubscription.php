@@ -34,6 +34,8 @@ class StoreUpdateSubscription extends FormRequest
         if ($this->method() == 'PUT') {
             $rules['password'] = ['nullable', 'string', 'min:8', 'confirmed'];
             $rules['event_id'] = '1';
+            $rules['title'] = ['nullable', 'string', 'min:3', 'max:191'];
+            $rules['resume'] = ['nullable', 'string', 'min:3', 'max:10000'];
         }
 
         return $rules;

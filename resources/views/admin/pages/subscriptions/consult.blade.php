@@ -35,7 +35,6 @@
                 </thead>
 
                 <tbody>
-                @foreach($subscriptions as $subscription)
                     <tr>
                         <td>
                             {{ $subscription->title }}
@@ -44,11 +43,10 @@
                             {{ $subscription->status }}
                         </td>
                         <td style="width: 70px">
-                            <a href="{{ route('admin.subscriptions.edit', $subscription->id) }}" class="btn btn-warning">
-                                <i class="fas fa-edit"></i></a>
+                            <a href="{{ route('admin.subscriptions.show', $subscription->id) }}" class="btn btn-primary">
+                                <i class="far fa-eye"></i></a>
                         </td>
                     </tr>
-                @endforeach
                 </tbody>
             </table>
         </div>

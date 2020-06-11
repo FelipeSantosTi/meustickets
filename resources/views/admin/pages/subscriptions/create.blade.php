@@ -27,7 +27,7 @@
         <div class="card-body">
             <form action="{{ route('admin.subscriptions.store') }}" class="form" method="POST">
                 @csrf
-                @include('admin.pages.subscriptions._partials.formav')
+                @include('admin.pages.subscriptions._partials.form')
             </form>
         </div>
     </div>
