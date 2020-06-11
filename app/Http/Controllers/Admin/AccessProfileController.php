@@ -14,6 +14,8 @@ class AccessProfileController extends Controller
     public function __construct(Access $access, Profile $profile) {
         $this->access = $access;
         $this->profile = $profile;
+
+        $this->middleware(['can:Acessos']);
     }
 
     public function profiles($idAccess)

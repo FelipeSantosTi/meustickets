@@ -14,6 +14,8 @@ class SubscriptionController extends Controller
     public function __construct(Subscription $subscription)
     {
         $this->repository = $subscription;
+
+        $this->middleware(['can:Inscrições']);
     }
 
     public function index()

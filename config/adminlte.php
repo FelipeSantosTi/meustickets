@@ -229,7 +229,7 @@ return [
         [
             'text' => 'Acessos',
             'icon' => 'fas fa-door-open',
-//            'can' => 'Planos',
+            'can' => 'Acessos',
             'submenu' => [
                 [
                     'text' => 'Listar',
@@ -247,7 +247,7 @@ return [
         [
             'text' => 'Perfis',
             'icon' => 'far fa-address-book',
-//            'can' => 'Perfis',
+            'can' => 'Perfis',
             'submenu' => [
                 [
                     'text' => 'Listar',
@@ -265,7 +265,7 @@ return [
         [
             'text' => 'Permissões',
             'icon' => 'fas fa-lock',
-//            'can' => 'Permissões',
+            'can' => 'Permissões',
             'submenu' => [
                 [
                     'text' => 'Listar',
@@ -314,7 +314,7 @@ return [
         [
             'text' => 'Inscrição',
             'icon' => 'far fa-file-alt',
-            /* 'can' => 'Inscrição', */
+            'can' => 'Inscrição',
             'submenu' => [
                 [
                     'text' => 'Realizar',
@@ -332,7 +332,7 @@ return [
         [
             'text' => 'Avaliação',
             'icon' => 'far fa-file-alt',
-            /* 'can' => 'Inscrição', */
+            'can' => 'Inscrição',
             'submenu' => [
                 [
                     'text' => 'Consultar',
@@ -345,7 +345,7 @@ return [
         [
             'text' => 'Usuários',
             'icon' => 'fas fa-users',
-            /* 'can' => 'Usuários', */
+            'can' => 'Usuários',
             'submenu' => [
                 [
                     'text' => 'Listar',

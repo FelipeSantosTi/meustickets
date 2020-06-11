@@ -16,6 +16,8 @@ class AccessController extends Controller
     public function __construct(Access $access)
     {
         $this->repository = $access;
+
+        $this->middleware(['can:Acessos']);
     }
 
     public function index()
