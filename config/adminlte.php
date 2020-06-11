@@ -313,18 +313,31 @@ return [
 
         [
             'text' => 'Inscrição',
-            'icon' => 'fas fa-users',
-            'can' => 'Inscrição',
+            'icon' => 'far fa-file-alt',
+            /* 'can' => 'Inscrição', */
             'submenu' => [
                 [
-                    'text' => 'Listar',
-                    'url' => 'admin/subscription',
-                    'icon' => 'fas fa-user-lock',
+                    'text' => 'Realizar',
+                    'url' => 'admin/subscriptions',
+                    'icon' => 'far fa-edit',
                 ],
                 [
                     'text' => 'Consultar',
-                    'url' => 'admin/subscription/consult',
-                    'icon' => 'fas fa-plus',
+                    'url' => 'admin/subscriptions/consult',
+                    'icon' => 'fas fa-search',
+                ],
+            ]
+        ],
+
+        [
+            'text' => 'Avaliação',
+            'icon' => 'far fa-file-alt',
+            /* 'can' => 'Inscrição', */
+            'submenu' => [
+                [
+                    'text' => 'Consultar',
+                    'url' => 'admin/subscriptions',
+                    'icon' => 'far fa-edit',
                 ],
             ]
         ],

@@ -22,7 +22,7 @@ class CreateEventsTable extends Migration
             $table->foreign('access_id')
                     ->references('id')
                     ->on('accesses')
-                    ->onDelete('cascade');;
+                    ->onDelete('cascade');
         });
     }
 

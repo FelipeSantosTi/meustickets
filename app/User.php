@@ -47,4 +47,9 @@ class User extends Authenticatable
     {
         return $query->where('event_id', auth()->user()->event_id);
     }
+
+    public function subscription()
+    {
+        return $this->hasOne(Subscription::class);
+    }
 }

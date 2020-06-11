@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'middleware' => 'auth'], function () {
 
+    // SUBSCRIPTIONS ROUTES //
+    Route::resource('subscriptions', 'SubscriptionController');
+
     // USERS ROUTES //
     Route::resource('users', 'UserController');
 
