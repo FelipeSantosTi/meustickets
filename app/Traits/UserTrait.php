@@ -23,8 +23,26 @@ trait UserTrait
         return in_array($this->email, config('acl.admins'));
     }
 
-    public function hasPermission(string $permissionName): bool
+    public function adminPermission(string $permissionName): bool
     {
-        return in_array($permissionName, ['Acessos', 'Avaliação', 'Inscrição', 'Perfis']);
+        return in_array($permissionName, [
+            'Avaliação',
+            'Inscrição',
+            'Usuários'
+            ]);
+    }
+
+    public function evPermission(string $permissionName): bool
+    {
+        return in_array($permissionName, [
+            'Avaliação'
+            ]);
+    }
+
+    public function acdPermission(string $permissionName): bool
+    {
+        return in_array($permissionName, [
+            'Inscrição'
+            ]);
     }
 }

@@ -19,8 +19,23 @@ class UsersTableSeeder extends Seeder
 
         $event->users()->create([
             'name' => 'Administrador',
+            'access_id' => '1',
             'email' => 'admin@meustickets.com.br',
             'password' => bcrypt('adminadmin')
+        ]);
+
+        $event->users()->create([
+            'name' => 'Avaliador',
+            'access_id' => '2',
+            'email' => 'avaliador@meustickets.com.br',
+            'password' => bcrypt('avaliador')
+        ]);
+
+        $event->users()->create([
+            'name' => 'Acadêmico',
+            'access_id' => '3',
+            'email' => 'academico@meustickets.com.br',
+            'password' => bcrypt('academico')
         ]);
     }
 }

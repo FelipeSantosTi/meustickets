@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'event_id'
+        'name', 'email', 'password', 'event_id', 'access_id'
     ];
 
     /**
@@ -42,6 +42,11 @@ class User extends Authenticatable
     public function event()
     {
         return $this->belongsTo(Event::class);
+    }
+
+    public function access()
+    {
+        return $this->belongsTo(Access::class);
     }
 
     public function scopeEventUser(Builder $query)

@@ -19,14 +19,14 @@ class AccessesTableSeeder extends Seeder
                 'url' => 'administrador'
             ]);
 
-            Access::create(
+        Access::create(
             [
                 'name' => 'Avaliador',
                 'description' => 'Acesso às páginas de avaliação',
                 'url' => 'avaliador'
             ]);
 
-            Access::create(
+        Access::create(
             [
                 'name' => 'Acadêmico',
                 'description' => 'Acesso às páginas de submissão',

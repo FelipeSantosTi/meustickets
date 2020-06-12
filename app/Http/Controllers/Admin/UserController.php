@@ -70,7 +70,7 @@ class UserController extends Controller
             return redirect()->back();
         }
 
-        $data =$request->only(['name', 'email']);
+        $data =$request->only(['name', 'email', 'access_id']);
 
         if ($request->password) {
             $data['password'] = bcrypt($request->password);

@@ -209,24 +209,6 @@ return [
 
     'menu' => [
         [
-            'text' => 'Eventos',
-            'icon' => 'fas fa-star',
-            'can' => 'Eventos',
-            'submenu' => [
-                [
-                    'text' => 'Listar',
-                    'url' => 'admin/events',
-                    'icon' => 'far fa-address-card',
-                ],
-                [
-                    'text' => 'Criar',
-                    'url' => 'admin/events/create',
-                    'icon' => 'fas fa-plus',
-                ],
-            ]
-        ],
-
-        [
             'text' => 'Acessos',
             'icon' => 'fas fa-door-open',
             'can' => 'Acessos',
@@ -281,37 +263,6 @@ return [
         ],
 
         [
-            'text' => 'Categorias',
-            'icon' => 'fas fa-layer-group',
-            'can' => 'Categorias',
-            'submenu' => [
-                [
-                    'text' => 'Listar',
-                    'url' => 'admin/categories',
-                    'icon' => 'fas fa-user-lock',
-                ],
-                [
-                    'text' => 'Criar',
-                    'url' => 'admin/categories/create',
-                    'icon' => 'fas fa-plus',
-                ],
-            ]
-        ],
-
-        [
-            'text' => 'Avaliar',
-            'icon' => 'fas fa-file',
-            'can' => 'Artigos',
-            'submenu' => [
-                [
-                    'text' => 'Listar',
-                    'url' => 'admin/articles',
-                    'icon' => 'fas fa-user-lock',
-                ],
-            ]
-        ],
-
-        [
             'text' => 'Inscrição',
             'icon' => 'far fa-file-alt',
             'can' => 'Inscrição',
@@ -332,7 +283,7 @@ return [
         [
             'text' => 'Avaliação',
             'icon' => 'far fa-file-alt',
-            'can' => 'Inscrição',
+            'can' => 'Avaliação',
             'submenu' => [
                 [
                     'text' => 'Consultar',
@@ -356,23 +307,6 @@ return [
                     'text' => 'Criar',
                     'url' => 'admin/users/create',
                     'icon' => 'fas fa-plus',
-                ],
-            ]
-        ],
-
-        [
-            'text' => 'account_settings',
-            'icon' => 'fas fa fa-cog',
-            'submenu' => [
-                [
-                    'text' => 'profile',
-                    'url' => 'admin/settings',
-                    'icon' => 'fas fa-fw fa-user',
-                ],
-                [
-                    'text' => 'change_password',
-                    'url' => 'admin/settings',
-                    'icon' => 'fas fa-fw fa-lock',
                 ],
             ]
         ],

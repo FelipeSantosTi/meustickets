@@ -34,6 +34,7 @@ class StoreUpdateUser extends FormRequest
         if ($this->method() == 'PUT') {
             $rules['password'] = ['nullable', 'string', 'min:8', 'confirmed'];
             $rules['event_id'] = '1';
+            $rules['access_id'] = ['nullable'];
         }
 
         return $rules;
