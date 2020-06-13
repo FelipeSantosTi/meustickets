@@ -13,6 +13,7 @@ class Subscription extends Model
         'user_id',
         'evaluator',
         'status',
+        'coment',
         'n1',
         'n2'
     ];

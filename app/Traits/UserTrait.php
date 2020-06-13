@@ -26,6 +26,7 @@ trait UserTrait
     public function adminPermission(string $permissionName): bool
     {
         return in_array($permissionName, [
+            'Dashboard',
             'Avaliação',
             'Inscrição',
             'Usuários'

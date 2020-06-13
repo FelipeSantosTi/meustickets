@@ -13,7 +13,11 @@
         <h1>Detalhes do Artigo</h1>
     </div>
     <div class="col-lg-1">
-        <a href="{{ route('admin.subscriptions.consult') }}" class="btn btn-primary">Voltar</a>
+        <form action="{{ route('admin.subscriptions.destroy', $subscription->id) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger">Excluir</button>
+        </form>
     </div>
 </div>
 @stop
@@ -41,7 +45,25 @@
                         {{ $subscription->title }}
                     </td>
                     <td>
-                        {{ $subscription->status }}
+                        <?php if ($subscription->status === 'Submetido') { ?>
+                        <span class="badge badge-pill badge-primary">{{ $subscription->status }}</span>
+                        <?php } ?>
+
+                        <?php if ($subscription->status === 'Submetido Revisado') { ?>
+                        <span class="badge badge-pill badge-primary">{{ $subscription->status }}</span>
+                        <?php } ?>
+
+                        <?php if ($subscription->status === 'Aprovado') { ?>
+                        <span class="badge badge-pill badge-success">{{ $subscription->status }}</span>
+                        <?php } ?>
+
+                        <?php if ($subscription->status === 'Reprovado') { ?>
+                        <span class="badge badge-pill badge-danger">{{ $subscription->status }}</span>
+                        <?php } ?>
+
+                        <?php if ($subscription->status === 'Revisão') { ?>
+                        <span class="badge badge-pill badge-warning">{{ $subscription->status }}</span>
+                        <?php } ?>
                     </td>
                     <td>
                         {{ $subscription->n1 }}
@@ -52,5 +74,13 @@
                 </tr>
             </tbody>
         </table>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"> <strong>Comentário</strong></h5>
+                <br>
+                <p class="card-text">{{ $subscription->coment }}</p>
+            </div>
+        </div>
     </div>
     @stop

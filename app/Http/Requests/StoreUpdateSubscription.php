@@ -29,6 +29,7 @@ class StoreUpdateSubscription extends FormRequest
             'title' => ['required', 'string', 'min:3', 'max:191'],
             'resume' => ['nullable', 'string', 'max:10000'],
             'document' => ['nullable', 'file'],
+            'coment' => ['nullable', 'string']
         ];
 
         if ($this->method() == 'PUT') {
@@ -36,6 +37,7 @@ class StoreUpdateSubscription extends FormRequest
             $rules['event_id'] = '1';
             $rules['title'] = ['nullable', 'string', 'min:3', 'max:191'];
             $rules['resume'] = ['nullable', 'string', 'min:3', 'max:10000'];
+            $rules['coment'] = ['nullable', 'string'];
         }
 
         return $rules;

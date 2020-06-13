@@ -209,6 +209,19 @@ return [
 
     'menu' => [
         [
+            'text' => 'Painel',
+            'icon' => 'fas fa-tachometer-alt',
+            'can' => 'Dashboard',
+            'submenu' => [
+                [
+                    'text' => 'Dashboard',
+                    'url' => 'admin/dashboard',
+                    'icon' => 'fas fa-chart-pie',
+                ],
+            ]
+        ],
+
+        [
             'text' => 'Acessos',
             'icon' => 'fas fa-door-open',
             'can' => 'Acessos',

@@ -61,6 +61,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
 
     // HOME ROUTE //
     Route::get('/', 'DashboardController@home')->name('home');
+    Route::get('/dashboard', 'DashboardController@dashboard')->name('dashboard');
 });
 
 Route::get('/', 'Site\HomeController@home')->name('site.home');

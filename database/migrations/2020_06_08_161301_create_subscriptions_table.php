@@ -21,6 +21,7 @@ class CreateSubscriptionsTable extends Migration
             $table->string('document')->nullable();
             $table->string('evaluator')->nullable();
             $table->string('status')->nullable();
+            $table->string('coment')->nullable();
             $table->float('n1')->nullable();
             $table->float('n2')->nullable();
             $table->timestamps();
