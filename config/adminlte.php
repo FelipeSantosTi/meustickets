@@ -277,11 +277,11 @@ return [
 
         [
             'text' => 'Inscrição',
-            'icon' => 'far fa-file-alt',
+            'icon' => 'far fa-paper-plane',
             'can' => 'Inscrição',
             'submenu' => [
                 [
-                    'text' => 'Realizar',
+                    'text' => 'Submissão',
                     'url' => 'admin/subscriptions/create',
                     'icon' => 'far fa-edit',
                 ],
@@ -301,7 +301,7 @@ return [
                 [
                     'text' => 'Consultar',
                     'url' => 'admin/subscriptions',
-                    'icon' => 'far fa-edit',
+                    'icon' => 'fas fa-search',
                 ],
             ]
         ],
