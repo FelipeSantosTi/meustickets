@@ -9,15 +9,8 @@
 </ol>
 
 <div class="row">
-    <div class="col-lg-11">
+    <div class="col-lg-12">
         <h1>Detalhes do Artigo</h1>
-    </div>
-    <div class="col-lg-1">
-        <form action="{{ route('admin.subscriptions.destroy', $subscription->id) }}" method="POST">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn btn-danger">Excluir</button>
-        </form>
     </div>
 </div>
 @stop
