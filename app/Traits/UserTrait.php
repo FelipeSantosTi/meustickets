@@ -27,7 +27,8 @@ trait UserTrait
     {
         return in_array($permissionName, [
             'Dashboard',
-            'Usuários'
+            'Usuários',
+            'Avaliação'
             ]);
     }
 
