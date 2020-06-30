@@ -66,17 +66,17 @@
         <!-- /.col -->
     </div>
 
-    <div class="row">
+    {{-- <div class="row">
         <div class="col-12">
             {{ $chart }}
         </div>
-    </div>
+    </div> --}}
 @stop
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
 @stop
 
-@push('js')
+{{-- @push('js')
     {!! $chart->script() !!}
-@endpush
+@endpush --}}

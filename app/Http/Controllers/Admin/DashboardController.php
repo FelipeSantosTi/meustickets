@@ -28,10 +28,10 @@ class DashboardController extends Controller
         $totalAv = $this->user->where('access_id', '2')->count();
         $totalAdm = $this->user->where('access_id', '1')->count();
 
-        $chart->labels();
+        /* $chart->labels();
         $chart->dataset('2020', 'bar', [
             12, 14, 25
-        ]);
+        ]); */
 
         $this->middleware(['can:Dashboard']);
         return view('admin.pages.dashboard.index', [

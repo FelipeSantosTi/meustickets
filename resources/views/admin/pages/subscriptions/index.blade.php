@@ -63,8 +63,13 @@
                         <?php } ?>
                     </td>
                     <td style="width: 70px">
+                        @if (auth()->user()->access_id == 1)
+                        <a href="{{ route('admin.subscriptions.show', $subscription->id) }}" class="btn btn-primary">
+                            <i class="far fa-eye"></i></a>
+                        @else
                         <a href="{{ route('admin.subscriptions.edit', $subscription->id) }}" class="btn btn-warning">
                             <i class="fas fa-edit"></i></a>
+                        @endif
                     </td>
                 </tr>
                 @endforeach
