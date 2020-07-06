@@ -15,7 +15,7 @@ class UserController extends Controller
     {
         $this->repository = $user;
 
-        $this->middleware(['can:Usuários']);
+        //$this->middleware(['can:Usuários']);
     }
 
     public function index()
@@ -24,6 +24,11 @@ class UserController extends Controller
         return view('admin.pages.users.index', [
             'users' => $users
         ]);
+    }
+
+    public function user()
+    {
+        return view('admin.pages.users.user');
     }
 
     public function create()

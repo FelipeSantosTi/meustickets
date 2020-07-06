@@ -25,6 +25,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
 
     // USERS ROUTES //
     Route::resource('users', 'UserController');
+    Route::get('user', 'UserController@user')->name('user');
 
     // ACCESSES x PROFILES ROUTES //
     Route::get('accesses/{id}/profiles/{idProfile}/detach', 'AccessProfileController@detach')

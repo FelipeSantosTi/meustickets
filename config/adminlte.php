@@ -323,6 +323,19 @@ return [
                 ],
             ]
         ],
+
+        [
+          'text' => 'Meus Dados',
+          'icon' => 'fas fa-user',
+          //'can' => 'Usuários',
+          'submenu' => [
+              [
+                  'text' => 'Visualizar',
+                  'url' => 'admin/user',
+                  'icon' => 'fas fa-search',
+              ],
+          ]
+      ],
     ],
 
     /*
